@@ -1,16 +1,17 @@
 # CONSTANTS
-allowedVehicleList = [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan' ]
+allowedVehicleList = [ 'Ford F-150', 'Chevrolet Silverado', 'Tesla CyberTruck', 'Toyota Tundra', 'Nissan Titan', 'Rivian R1T', 'Ram 1500' ]
 
 while True:
     print("****************\n AUTOCARFINDER \n *******************")
     print("\n1. PRINT LIST OF AVAILABLE CARS\nor\n")
     print("2. SEARCH FOR VEHICLE\n")
     print("3. ADD AUTHORIZED VEHICLE\n")
-    print("4. EXIT")
+    print("4. DELETE AUTHORIZED VEHICLE\n")
+    print("5. EXIT")
 
-    menuInput = input("Enter 1, 2, 3, or 4: ")
+    menuInput = input("Enter 1, 2, 3, 4, or 5: ")
 
-    if int(menuInput) == 4:
+    if int(menuInput) == 5:
         print("Thank you for using the AutoCountry Vehicle Finder, good-bye!")
         break
 
@@ -34,3 +35,11 @@ while True:
         print(f"You have added {newVehicle} as an authorized vehicle")
       
 
+    if int(menuInput) == 4:
+        deletedVehicle = input("Please Enter the full Vehicle name you would like to REMOVE: ")
+        bool = input(f"Are you sure you want to remove {deletedVehicle} from the Authorized Vehicles List?")
+        if bool == "yes":
+            allowedVehicleList.remove(deletedVehicle)
+            print(f"You have REMOVED {deletedVehicle} as an authorized vehicle")
+        elif bool == "no":
+            print("Thank you")
